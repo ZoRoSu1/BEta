@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Protest+Revolution&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&family=Protest+Revolution&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Bad+Script');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+}
+
+header {
+    text-align: center; 
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    font-family: "Josefin Slab", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    text-align: center; 
+    text-decoration: none;
+    color: #fff; /*+ her favourite color */
+    font-size: 3rem;
+    animation: neonGlow 1s infinite alternate;
+    margin: 0 auto; 
+}
+
+.menu-toggle {
+    font-size: 1.5rem;
+    background: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 10px 0px;
+    padding: 0;
+    transition: transform 0.3s ease;
+}
+
+.nav-links.active {
+    transform: translateX(0);
+}
+
+.nav-links li {
+    margin-left: 10px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: color 0.1s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.activate {
+    color: #ff0707; 
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background: transparent;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+        transform: translateX(100%);
+        transition: transform 0.1s ease;
+    }
+    .nav-links.active {
+        transform: translateX(0);
+    }
+}
+
+.paragraph {
+    font-family: 'Courgette', cursive;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 24px;
+    color: #fff; 
+    padding: 0;
+    text-align: center; 
+    margin-top: 50px; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+}
+
+footer {
+    margin-top: 100px; /* Adjusted margin */
+    background: linear-gradient(to top, #000 ,  transparent);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.block {
+    position: relative;
+    border-radius: 25px;
+    background: linear-gradient(0deg , #000 , rgb(44 , 43 , 43));
+    text-align: center; /* Centered text */
+    margin: 20px auto; /* Centered horizontally */
+    width: fit-content; /* Adjusted width */
+    padding: 10px; /* Added padding */
+}
+
+.glow::before, .glow::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, #512889, #743296, #6b0b88 , #3a0368, #261342, #2b115c,#4b0082,#5c0958 , #550e5d, #170264, #5f0764, #0b0449, #69006b, #500149,#170264, #720071, #53014f, #4a2256);
+    background-size: 400%;
+    width: calc(100% + 5px);
+    height: calc(100% + 5px);
+    border-radius: 25px;
+    z-index: -1;
+    animation: animate 20s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0 ;
+    }
+}
+
+.glow::after {
+    filter: blur(40px);
+}
+button {
+    width: 165px;
+    height: 62px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 17px;
+    border-radius: 1rem;
+    border: none;
+    position: relative;
+    background: transparent ;
+    transition: 0.1s;
+  }
+  button:active {
+    transform: scale(0.9) rotate(3deg);
+    background: transparent;
+    transition: 0.5s;
+  }
+
